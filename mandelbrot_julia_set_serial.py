@@ -46,4 +46,3 @@ plt.axis('off')
 plt.imshow(Z,cmap='jet',interpolation = 'bilinear',origin='lower') 
 plt.show()
 
-
