@@ -32,7 +32,7 @@ for i in range(max_iter):
         # z <- z^2 + c
         z[live] = z[live]**2 + c[live]
     elif (pattern == 2):
-        z[live] = z[live]**2 + 0.314*np.exp(1j*a)
+        z[live] = z[live]**2 + 0.78875*np.exp(1j*a)
         
 # Test if |z| > 5. If it is, c is *not* in the set
     escaped = abs(z[live]) > 5.0
