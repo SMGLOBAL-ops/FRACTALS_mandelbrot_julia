@@ -12,7 +12,7 @@ c = (re + 1j*im).flatten()
 # is in the fractal set or not. Also to keep track of points 
 # that have not yet diverged. 
 
-mset = np.zeros_like(c) + max_iter
+fractal_set = np.zeros_like(c) + max_iter
 live, = np.indices(c.shape)
 
 # selecting desired fractal image
@@ -38,10 +38,10 @@ for i in range(max_iter):
         
 # Test if |z| > 5. If it is, c is *not* in the set
     escaped = abs(z[live]) > 5.0
-    mset[live[escaped]] = i
+    fractal_set[live[escaped]] = i
     # Ignore points that we already know are not in the set
     live = live[~escaped]
-Z = abs(mset.reshape((height, width)))
+Z = abs(fractal_set.reshape((height, width)))
 plt.axis('off')
 plt.imshow(Z,cmap='jet',interpolation = 'bilinear',origin='lower') 
 plt.show()
