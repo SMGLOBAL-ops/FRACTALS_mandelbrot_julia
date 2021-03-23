@@ -29,11 +29,9 @@ elif (pattern == 2):
 for i in range(max_iter): 
     a = 2.98
     if (pattern == 1):
-       # z = np.zeros_like(c)
         # z <- z^2 + c
         z[live] = z[live]**2 + c[live]
     elif (pattern == 2):
-       # z = np.array(c)
         z[live] = z[live]**2 + 0.7885*np.exp(1j*a)
         
 # Test if |z| > 5. If it is, c is *not* in the set
